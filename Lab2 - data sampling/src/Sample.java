@@ -25,8 +25,6 @@ public class Sample {
                 } else {
                     flag = true;
                 }
-
-
             } catch (InputMismatchException ime) {
                 System.out.println("Salary must be an int. If you want to exit, please, input '-1'");
                 in.nextLine();
