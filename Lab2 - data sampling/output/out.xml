@@ -1,0 +1,44 @@
+<HTML>
+    <title>Lab2: data sampling</title>
+    <body>
+        <font color="yellow">Header</font>
+        <table border="1">
+            <tr>
+                <th>ПІБ</th>
+                <th>Зарплата</th>
+            </tr>
+            <tr>
+                <td>
+                    <i>
+                        <font color="black">Sokratis</font>
+                    </i>
+                </td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>
+                    <i>
+                        <font color="black">Arsene Wenger</font>
+                    </i>
+                </td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>
+                    <i>
+                        <font color="black">Alex Lacazette</font>
+                    </i>
+                </td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>
+                    <i>
+                        <font color="black">Pierre Aubameyang</font>
+                    </i>
+                </td>
+                <td>250</td>
+            </tr>
+        </table>
+    </body>
+</HTML>
