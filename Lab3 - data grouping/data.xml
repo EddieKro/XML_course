@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type='text/xsl' href='groupby.xsl'?>
+<employees>
+<employee>
+	<fullname>Carl Jenkinson</fullname>
+	<birthdate>02.02.1992</birthdate>
+	<department>Defence</department>
+	<salary>20</salary>
+	<address>Westminster Abbey,2, apt.34</address>
+	<email>carloo123_92@gunner.gmail.com</email>
+	<webpage></webpage>
+</employee>
+<employee>
+	<fullname>Ainsley Niles</fullname>
+	<birthdate>13.09.1983</birthdate>
+	<department>Defence</department>
+	<salary>30</salary>
+	<address>Highbury st.,42</address>
+	<email>Ainsley@gunner.co.uk</email>
+	<webpage></webpage>
+</employee>
+
+<employee>
+	<fullname>Arsene Wenger</fullname>
+	<birthdate>22.10.1949</birthdate>
+	<department>Managing</department>
+	<salary>100</salary>
+	<address>Notre Dame, st. Louis str., 3, apt. 13</address>
+	<email >coat@trainers.fr</email>
+	<webpage>https://en.wikipedia.org/wiki/Ars%C3%A8ne_Wenger</webpage>
+</employee>
+
+<employee>
+	<fullname>Alex Lacazette</fullname>
+	<birthdate>22.10.1949</birthdate>
+	<department>Attack</department>
+	<salary>200</salary>
+	<address>doesn't matter</address>
+	<email>alex@lacazette.fr</email>
+	<webpage></webpage>
+</employee>
+<employee>
+	<fullname>Pierre Aubameyang</fullname>
+	<birthdate>22.10.1949</birthdate>
+	<department>Attack</department>
+	<salary>250</salary>
+	<address>doesn't matter</address>
+	<email >aubama@department.gov</email>
+	<webpage></webpage>
+</employee>
+
+
+</employees>
+
+
+
+
+<!--employee template
+<employee>
+	<name></name>
+	<surname></surname>
+	<birthdate></birthdate>
+	<department></department>
+	<salary></salary>
+	<address></address>
+	<email'></email>
+	<webpage></webpage>
+</employee>
+ -->
+

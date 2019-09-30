@@ -23,7 +23,7 @@
                         <xsl:when test="$count= 0">
                             <td>
                                 <b>
-                                    <xsl:text>No employees found</xsl:text>
+                                    <xsl:text>No employees matching conditions found</xsl:text>
                                 </b>
 
                             </td>
