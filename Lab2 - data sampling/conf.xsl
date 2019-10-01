@@ -10,26 +10,22 @@
         <xsl:choose>
             <xsl:when test="$count= 0">
                 <xsl:copy>
-                    <xsl:text>No employees matching conditions found</xsl:text><!-- append-->
+                    <xsl:element name="message">
+                        <xsl:text>No employees with salary more than </xsl:text>
+                        <xsl:value-of select="$min"/>
+                        <xsl:text> found</xsl:text>
+                    </xsl:element>
                 </xsl:copy>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:copy>
-                    <xsl:element name="employees">
-                        <xsl:for-each select='employees/employee[@salary>$min]'>
-                            <xsl:element name="{name()}">
-                                <xsl:attribute name="fullname">
-                                    <xsl:value-of select="@fullname"/>
-                                </xsl:attribute>
-                                <xsl:attribute name="salary">
-                                    <xsl:value-of select="@salary"/>
-                                </xsl:attribute>
-                            </xsl:element>
-                        </xsl:for-each>
-                    </xsl:element>
+                <xsl:element name="employees">
+                    <xsl:copy>
+                        <xsl:copy-of select="employees/employee[@salary>$min]"/>
+                    </xsl:copy>
+                </xsl:element>
 
-                </xsl:copy>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
 </xsl:stylesheet>
+
