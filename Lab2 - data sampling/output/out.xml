@@ -1,44 +1,7 @@
-<HTML>
-    <title>Lab2: data sampling</title>
-    <body>
-        <font color="yellow">Header</font>
-        <table border="1">
-            <tr>
-                <th>ПІБ</th>
-                <th>Зарплата</th>
-            </tr>
-            <tr>
-                <td>
-                    <i>
-                        <font color="black">Sokratis</font>
-                    </i>
-                </td>
-                <td>90</td>
-            </tr>
-            <tr>
-                <td>
-                    <i>
-                        <font color="black">Arsene Wenger</font>
-                    </i>
-                </td>
-                <td>100</td>
-            </tr>
-            <tr>
-                <td>
-                    <i>
-                        <font color="black">Alex Lacazette</font>
-                    </i>
-                </td>
-                <td>200</td>
-            </tr>
-            <tr>
-                <td>
-                    <i>
-                        <font color="black">Pierre Aubameyang</font>
-                    </i>
-                </td>
-                <td>250</td>
-            </tr>
-        </table>
-    </body>
-</HTML>
+<?xml version="1.0" encoding="UTF-8"?>
+<employees>
+    <employee fullname="Sokratis" salary="90"/>
+    <employee fullname="Arsene Wenger" salary="100"/>
+    <employee fullname="Alex Lacazette" salary="200"/>
+    <employee fullname="Pierre Aubameyang" salary="250"/>
+</employees>
