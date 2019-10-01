@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type='text/xsl' href='conf.xsl'?>
+<employees>
+    <employee fullname="Carl Jenkinson" salary="20"/>
+    <employee fullname="Ainsley Niles" salary="30"/>
+    <employee fullname="Sokratis" salary="90"/>
+    <employee fullname="Arsene Wenger" salary="100"/>
+    <employee fullname="Alex Lacazette" salary="200"/>
+    <employee fullname="Pierre Aubameyang" salary="250"/>
+</employees>
