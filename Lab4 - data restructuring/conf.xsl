@@ -6,7 +6,7 @@
         </xsl:copy>
     </xsl:template>
 
-    <xsl:template match=" employee/@*">
+    <xsl:template match="@*">
         <xsl:element name="{name()}">
             <xsl:value-of select="."/>
         </xsl:element>

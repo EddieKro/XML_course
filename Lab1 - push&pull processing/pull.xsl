@@ -27,13 +27,13 @@
 			<td><a><xsl:attribute name="href">
 				<xsl:value-of select="webpage"/>
 				</xsl:attribute>personal webpage</a></td>
-		</tr>
-	
-	</xsl:for-each>	
-	</table>
+		</tr>	
+		</xsl:for-each>	
+		
+		</table>
 
-</body>
-</HTML>
+		</body>
+	</HTML>
 </xsl:template>
 	
 </xsl:stylesheet>

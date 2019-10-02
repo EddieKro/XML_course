@@ -7,4 +7,6 @@
     <employee fullname="Arsene Wenger" salary="100"/>
     <employee fullname="Alex Lacazette" salary="200"/>
     <employee fullname="Pierre Aubameyang" salary="250"/>
+    <test1 a="10" b="20"/>
+    <test2 c="42" d="t"/>
 </employees>

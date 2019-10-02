@@ -24,4 +24,12 @@
         <fullname>Pierre Aubameyang</fullname>
         <salary>250</salary>
     </employee>
+    <test>
+        <a>10</a>
+        <b>20</b>
+    </test>
+    <test2>
+        <c>42</c>
+        <d>t</d>
+    </test2>
 </employees>
