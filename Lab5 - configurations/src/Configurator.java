@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Configurator {
-    private static final boolean USE_XPATH = false;//change it to true to use xpath
+    private static final boolean USE_XPATH = true;//change it to true to use xpath
 
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException, XPathExpressionException, TransformerException {
         Scanner scanner = new Scanner(System.in);
@@ -31,43 +31,47 @@ public class Configurator {
         document.getDocumentElement().normalize();
 
         Element rootElement = document.getDocumentElement();
+        NodeList nodeList = null;
+        int k =0;
+
+        if (USE_XPATH) {
+            System.out.println("XPath is used right now\n");
+            XPathFactory xPathFactory = XPathFactory.newInstance();
+            XPath path = xPathFactory.newXPath();
+            String xPathString = "configuration/*";
+            nodeList = (NodeList) path.evaluate(xPathString, document, XPathConstants.NODESET);
+        } else {
+            nodeList = document.getElementsByTagName("*");
+            k=1;
+            System.out.println("No xpath was used during a runtime of this particular script\n");
+
+        }
+
         System.out.println("Root element is : " + rootElement.getNodeName());
         System.out.println("----------------------------\nConfiguration parameters and it's values are:");
 
+        for (int i = k; i < nodeList.getLength(); i++) {//i=1 to ignore root element
+            Element element = (Element) nodeList.item(i);
+            Text element_value = (Text) element.getFirstChild();
+            System.out.println("* " + element.getNodeName() + " : " + element_value.getWholeText());
+        }
+        String s = "";
+        while (!s.equals("y") && !s.equals("n")) {
+            System.out.println("Would you like to change parameters (y/n)?");
+            s = scanner.nextLine();
+        }
 
-        if (USE_XPATH) {
-            XPathFactory xPathFactory = XPathFactory.newInstance();
-            XPath path = xPathFactory.newXPath();
-            String xPathString = "/configuration";
-            NodeList some = (NodeList) path.evaluate(xPathString, document, XPathConstants.NODESET);
-
-        } else {
-            System.out.println("\nno xpath was used during a runtime of this particular script");
-            NodeList nodeList = document.getElementsByTagName("*");
-
-            for (int i = 1; i < nodeList.getLength(); i++) {//i=1 to ignore root element
+        if (s.equals("y")) {
+            System.out.println("If you want to change a certain parameter, input 'y'. Otherwise, input anything else");
+            for (int i = k; i < nodeList.getLength(); i++) {
                 Element element = (Element) nodeList.item(i);
                 Text element_value = (Text) element.getFirstChild();
-                System.out.println("* " + element.getNodeName() + " : " + element_value.getWholeText());
-            }
-            String s = "";
-            while (!s.equals("y") && !s.equals("n")) {
-                System.out.println("Would you like to change parameters (y/n)?");
+
+                System.out.println("Parameter: " + element.getNodeName() + " is set to " + element_value.getWholeText() + " . Change it(y/n)?");
                 s = scanner.nextLine();
-            }
-
-            if (s.equals("y")) {
-                System.out.println("If you want to change a certain parameter, input 'y'. Otherwise, input anything else");
-                for (int i = 1; i < nodeList.getLength(); i++) {
-                    Element element = (Element) nodeList.item(i);
-                    Text element_value = (Text) element.getFirstChild();
-
-                    System.out.println("Parameter: " + element.getNodeName() + " is set to " + element_value.getWholeText() + " . Change it(y/n)?");
-                    s = scanner.nextLine();
-                    if (s.equals("y")) {
-                        System.out.println("Please, set a new value:");
-                        element.setTextContent(scanner.next());
-                    }
+                if (s.equals("y")) {
+                    System.out.println("Please, set a new value:");
+                    element.setTextContent(scanner.next());
                 }
             }
 
