@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<katalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="inherittypes.xsd">
+<book>
+	<author>Ivanov</author>
+	<title> Addicted to murders </title>
+</book>	
+<book>
+	<author>Petrov</author>
+	<title>Innocent victims</title>
+</book>
+  <book>
+    <author>Sidorov</author>
+    <title>XML and databases</title>
+    <!-- here is the problem!
+	<reviewer>
+      Donald Knut
+    </reviewer>-->
+  </book>
+	
+</katalog>
