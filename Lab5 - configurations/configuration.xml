@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<configuration>
+    <Architecture>x86_64</Architecture>
+    <OS>Windows 10</OS>
+    <ClientId>42</ClientId>
+    <Subscription>Premium</Subscription>
+    <Version>4.21</Version>
+</configuration>

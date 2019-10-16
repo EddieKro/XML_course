@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+    <Architecture>x86_64</Architecture>
+    <OS>Windows 10</OS>
+    <ClientId>42</ClientId>
+    <Subscription>Premium</Subscription>
+    <Version>4.21</Version>
+    <param>3</param>
+    <param2>kjnasd</param2>
+</configuration>
