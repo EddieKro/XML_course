@@ -8,13 +8,10 @@
 	<author>Petrov</author>
 	<title>Innocent victims</title>
 </book>
-  <book>
+  <book xsi:type="scientific-book">
     <author>Sidorov</author>
     <title>XML and databases</title>
-    <!-- here is the problem!
-	<reviewer>
-      Donald Knut
-    </reviewer>-->
+    <reviewer> Donald Knut</reviewer>
   </book>
 	
 </katalog>

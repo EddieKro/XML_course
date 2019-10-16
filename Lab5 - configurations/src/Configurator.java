@@ -32,7 +32,7 @@ public class Configurator {
 
         Element rootElement = document.getDocumentElement();
         NodeList nodeList = null;
-        int k =0;
+        int k = 0;
 
         if (USE_XPATH) {
             System.out.println("XPath is used right now\n");
@@ -42,13 +42,12 @@ public class Configurator {
             nodeList = (NodeList) path.evaluate(xPathString, document, XPathConstants.NODESET);
         } else {
             nodeList = document.getElementsByTagName("*");
-            k=1;
+            k = 1;
             System.out.println("No xpath was used during a runtime of this particular script\n");
-
         }
 
         System.out.println("Root element is : " + rootElement.getNodeName());
-        System.out.println("----------------------------\nConfiguration parameters and it's values are:");
+        System.out.println("----------------------------\nConfiguration parameters and its values are:");
 
         for (int i = k; i < nodeList.getLength(); i++) {//i=1 to ignore root element
             Element element = (Element) nodeList.item(i);
@@ -87,6 +86,7 @@ public class Configurator {
                     System.out.println("Input new parameter name:");
                     Element new_element = document.createElement(scanner.nextLine());
                     System.out.println("Input it's value");
+
                     Text value = document.createTextNode(scanner.nextLine());
                     new_element.appendChild(value);
                     rootElement.appendChild(new_element);

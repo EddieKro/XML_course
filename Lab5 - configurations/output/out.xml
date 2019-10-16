@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
-    <Architecture>x86_64</Architecture>
+    <Architecture>kasd</Architecture>
     <OS>Windows 10</OS>
     <ClientId>42</ClientId>
     <Subscription>Premium</Subscription>
     <Version>4.21</Version>
+    <dad>kasd</dad>
 </configuration>
