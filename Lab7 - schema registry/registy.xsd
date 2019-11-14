@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xsd:complexType name="husband">
+	<xsd:sequence>
+		<xsd:element name="status" type="status_type" />
+		<xsd:element name="fullname" type="xs:string"/>
+		<xsd:element name="address" type="xs:string"/>
+		<xsd:element name="email" type="email_type"/>
+		<xsd:element name="color" type="color_type"/><!-- dg -->
+		<xsd:element name="height" type="height_type"/>
+		<xsd:element name="probability" type="prob_type"/>
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:simpleType name="status_type" final="restriction" use="required">
+	<xsd:restriction base="xsd:NMTOKEN">
+		<xs:enumeration value="ex"/>
+		<xs:enumeration value="current"/>
+		<xs:enumeration value="candidate"/>
+	</xs:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="email_type">
+	<xsd:restriction base="xsd:positiveInteger">
+		<xsd:pattern value=".+@.+\..+"/>
+	</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="color_type" final="colorlist">?
+</xsd:simpleType>
+<xsd:simpleType name="height_type">
+	<xsd:restriction base="xsd:positiveInteger">
+		<xsd:minInclusive value="55">
+		<xsd:maxInclusive value="280">
+	</xsd:restriction>
+</xsd:simpleType>
+
+
+<xsd:simpleType name="prob_type">
+	<xsd:restriction base="xsd:positiveInteger">
+		<xsd:minInclusive value="0">
+		<xsd:maxInclusive value="100">
+	</xsd:restriction>
+<xsd:simpleType>
+
+
+<xsd:simpleType name="PersonEyeColorType">
+    <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="Black"/>
+        <xsd:enumeration value="Hazel"/>
+        <xsd:enumeration value="Gray"/>
+        <xsd:enumeration value="Brown"/>
+        <xsd:enumeration value="Violet"/>
+        <xsd:enumeration value="Green"/>
+        <xsd:enumeration value="Blue"/>
+        <xsd:enumeration value="Maroon"/>
+        <xsd:enumeration value="Pink"/>
+        <xsd:enumeration value="Dichromatic"/>
+        <xsd:enumeration value="Unknown"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+
+<xsd:element name="main">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="husband" maxOccurs="200"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+</xsd:schema>
