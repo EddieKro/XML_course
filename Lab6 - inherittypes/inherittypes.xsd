@@ -14,17 +14,15 @@
 	<xs:complexContent>
         <xs:extension base="book">
 			<xs:sequence>		
-				<xs:element name="reviewer"  type="xs:string"/>
+				<xs:element name="reviewer" type="xs:string"/>
 			</xs:sequence>
 		</xs:extension>
 	</xs:complexContent>	
 </xs:complexType>
 
-
 <xs:element name="katalog">
 	<xs:complexType>
 		<xs:sequence>
-
 			<xs:element name="book" type="book" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType> 
