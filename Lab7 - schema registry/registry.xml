@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <main xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="registry.xsd">
 <husband>
-	<status></status><!--ex,current,future -->
+	<status><ex marriage_date="YYYY.MM.DD" divorce_date="" divorce_reason="didn't like XML"></status><!--ex,current,future -->
 	<fullname></fullname>
 	<address></address>
 	<email></email>
@@ -9,17 +9,17 @@
 	<eyecolor></eyecolor>
 	<height></height>
 	
-	<!-- for exes and currents, marriage date-->
-	<marriage_date></marriage_date>
+	<!--
+	for status:
+	<status>
+	<ex marriage_date="" divorce_date="" divorce_reason="he hated XML"/>
+	</status>
 	
-	<!-- for exes, divorce date-->
-	<divorce_date></divorce_date>
-	
-	<!-- for exes, reason to divorce (optional)-->
-	<reason></reason>
-	
-	<!-- for candidates, probability of getting married (optional)-->
-	<probability></probability>
+	OR
+	<status>
+	<candidate probability="55"/>
+	</status>	
+	-->
 	
 </husband>
 </main>
