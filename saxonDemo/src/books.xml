@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<catalog location="Robbed Library">
+    <book><title>Die Kater und die Katzen</title>
+        <author>Ivanov</author>
+        <anot>A marvellous romantic story</anot>
+    </book>
+    <book>
+        <title>How to deceive people</title>
+        <author>Petrov</author>
+        <anot>Manual for cheaters</anot>
+    </book>
+</catalog>

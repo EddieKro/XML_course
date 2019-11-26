@@ -1,0 +1,1 @@
+xml-js data.xml --spaces 4 --out alternative.json

@@ -1,0 +1,119 @@
+{
+    "declaration": {
+        "attributes": {
+            "version": "1.0"
+        }
+    },
+    "elements": [
+        {
+            "type": "element",
+            "name": "people",
+            "elements": [
+                {
+                    "type": "element",
+                    "name": "person",
+                    "elements": [
+                        {
+                            "type": "element",
+                            "name": "name",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Dmitry"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "surname",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Kamikadze"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "address",
+                            "elements": [
+                                {
+                                    "type": "element",
+                                    "name": "city",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Tagil"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "element",
+                                    "name": "street",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Main"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "phones",
+                            "elements": [
+                                {
+                                    "type": "element",
+                                    "name": "personal",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "12345"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "element",
+                                    "name": "corporate",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "67890"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "attributes",
+                            "elements": [
+                                {
+                                    "type": "element",
+                                    "name": "attribute",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Cunning"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "element",
+                                    "name": "attribute",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Tedious"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

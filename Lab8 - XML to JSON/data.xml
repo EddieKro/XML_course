@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<people>
+<person>
+	<name>Dmitry</name>
+	<surname>Kamikadze</surname>
+	<address>
+		<city>Tagil</city>
+		<street>Main</street>
+	</address>
+	<phones>
+		<personal>12345</personal>
+		<corporate>67890</corporate>
+	</phones>
+	<attributes>
+		<attribute>Cunning</attribute>
+		<attribute>Tedious</attribute>
+	</attributes>
+</person>
+</people>

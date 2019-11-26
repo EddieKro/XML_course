@@ -1,0 +1,22 @@
+<HTML>
+   <title>
+		List of partners
+	</title>
+   <body>
+      <h3> Contacts by country </h3>
+      <p>Contacts who live in:
+         <b>UK</b><ul>
+            <li>Kabyzdub,
+               Anne</li>
+            <li>Smith,
+               Sam</li>
+         </ul>
+      </p>
+      <p>Contacts who live in:
+         <b>USA</b><ul>
+            <li>Ivanov,
+               Mike</li>
+         </ul>
+      </p>
+   </body>
+</HTML>

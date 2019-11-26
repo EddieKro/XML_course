@@ -1,26 +1,12 @@
-let http = require('http');
-let express = require('express');
+fs = require('fs');
+var convert = require('xml-js');
+var options = {compact:true, ignoreComment: true, alwaysChildren: false, spaces:4,textKey: '_', attributesKey: '$', commentKey: 'value'};
 
 
-let server=express();
-server.listen(6666);
-console.log('Server is running on port 6666');
-let fileName=__dirname+"/data.xml"
-
-
-var fs = require('fs'),
-    xml2js = require('xml2js');
- 
-var parser = new xml2js.Parser();
-fs.readFile(__dirname + '/data.xml', function(err, data) {
-    parser.parseString(data, function (err, result) {
-        console.dir(result);
-        console.log('Done');
-    });
-});
-
-server.use(express.static(__dirname));
-
-server.get('/', function(req, res){
-    res.sendFile(fileName);
+fs.readFile('./data.xml',function(err,data){
+	var result = convert.xml2json(data,options);
+	console.log("json ->", result);
+	var data = JSON.stringify(result,null,4);
+	fs.writeFileSync('data.json',data);
+	console.log("\ndata written to file");
 });
