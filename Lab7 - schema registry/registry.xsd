@@ -80,23 +80,23 @@
 <xs:complexType name="candidate_type">
 	<xs:attribute ref="probability" use="optional"/>
 </xs:complexType>
-    <xs:complexType name="husband">
-        <xs:sequence>
-            <xs:element name="status" type="status_type"/>
-            <xs:element name="fullname" type="xs:string"/>
-            <xs:element name="address" type="xs:string" minOccurs="0"/>
-            <xs:element name="email" type="email_type" minOccurs="0"/>
-            <xs:element name="haircolor" type="color_type" minOccurs="0"/>
-            <xs:element name="eyecolor" type="color_type" minOccurs="0"/>
-            <xs:element name="height" type="height_type"/>
+<xs:complexType name="husband">
+	<xs:sequence>
+         <xs:element name="status" type="status_type"/>
+         <xs:element name="fullname" type="xs:string"/>
+         <xs:element name="address" type="xs:string" minOccurs="0"/>
+         <xs:element name="email" type="email_type" minOccurs="0"/>
+         <xs:element name="haircolor" type="color_type" minOccurs="0"/>
+         <xs:element name="eyecolor" type="color_type" minOccurs="0"/>
+         <xs:element name="height" type="height_type"/>
+	</xs:sequence>
+</xs:complexType>
+
+<xs:element name="main">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="husband" type="husband" maxOccurs="200"/>
         </xs:sequence>
     </xs:complexType>
-
-    <xs:element name="main">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="husband" type="husband" maxOccurs="200"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+</xs:element>
 </xs:schema>
