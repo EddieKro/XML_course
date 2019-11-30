@@ -34,27 +34,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link MainType }
+     * Create an instance of {@link Husband }
      * 
      */
-    public MainType createMainType() {
-        return new MainType();
-    }
-
-    /**
-     * Create an instance of {@link HusbandType }
-     * 
-     */
-    public HusbandType createHusbandType() {
-        return new HusbandType();
-    }
-
-    /**
-     * Create an instance of {@link ExType }
-     * 
-     */
-    public ExType createExType() {
-        return new ExType();
+    public Husband createHusband() {
+        return new Husband();
     }
 
     /**
@@ -66,12 +50,44 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link MainType }{@code >}}
+     * Create an instance of {@link Maintype }
+     * 
+     */
+    public Maintype createMaintype() {
+        return new Maintype();
+    }
+
+    /**
+     * Create an instance of {@link PresentType }
+     * 
+     */
+    public PresentType createPresentType() {
+        return new PresentType();
+    }
+
+    /**
+     * Create an instance of {@link CandidateType }
+     * 
+     */
+    public CandidateType createCandidateType() {
+        return new CandidateType();
+    }
+
+    /**
+     * Create an instance of {@link ExType }
+     * 
+     */
+    public ExType createExType() {
+        return new ExType();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Maintype }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "main")
-    public JAXBElement<MainType> createMain(MainType value) {
-        return new JAXBElement<MainType>(_Main_QNAME, MainType.class, null, value);
+    public JAXBElement<Maintype> createMain(Maintype value) {
+        return new JAXBElement<Maintype>(_Main_QNAME, Maintype.class, null, value);
     }
 
 }

@@ -1,14 +1,62 @@
 <?xml version="1.0"?>
 <main xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="registry.xsd">
 <husband>
-	<status><ex marriage_date="YYYY.MM.DD" divorce_date="" divorce_reason="didn't like XML"/></status><!--ex,current,future -->
-	<fullname>Mr</fullname>
-	<address>X</address>
-	<email>a@b.c</email>
-	<haircolor>green</haircolor>
-	<eyecolor>blue</eyecolor>
-	<height>129</height>
-	
+	<status>
+		<ex marriage_date="1993-11-12" divorce_date="1998-01-22" divorce_reason="didn't like XML"/>
+	</status><!--ex,current,future -->
+	<fullname>Pawel Sanguszko</fullname>
+	<address>Sao Paolo</address>
+	<email>ps12@spmail.com</email>
+	<haircolor>Grey</haircolor>
+	<eyecolor>Blue</eyecolor>
+	<height>185</height>
+</husband>
+
+<husband>
+	<status><ex marriage_date="1999-06-06" divorce_date="2010-08-11" divorce_reason="forgot to close the tag"/></status>
+	<fullname>Maciej Zielinski</fullname>
+	<address></address>
+	<email>zielinski@rp.pl</email>
+	<haircolor>Blond</haircolor>
+	<eyecolor>Blue</eyecolor>
+	<height>181</height>
+</husband>
+
+<husband>
+	<status><present marriage_date="2014-09-03"/></status>
+	<fullname>Stanislaw Nowicki</fullname>
+	<address>Lodz</address>
+	<email>sn@lodz.edu.pl</email>
+	<haircolor>Maroon</haircolor>
+	<eyecolor>Hazel</eyecolor>
+	<height>191</height>
+</husband>
+<husband>
+	<status><candidate probability="30"/></status>
+	<fullname>Adam Czartoryski</fullname>
+	<address>London</address>
+	<eyecolor>Gray</eyecolor>
+	<height>180</height>
+</husband>
+<husband>
+	<status><candidate/></status>
+	<fullname>Andrzej Wajda</fullname>
+	<haircolor>Gray</haircolor>
+	<eyecolor>Unknown</eyecolor>
+	<height>176</height>
+</husband>
+  
+<!--  <husband>
+	<status><candidate/></status>
+	<fullname>Some Guy</fullname>
+	<haircolor>Grey</haircolor>
+	<eyecolor>Unknown</eyecolor>
+	<height>5</height>
+</husband>-->
+
+</main>
+
+
 	<!--
 	for status:
 	<status>
@@ -21,5 +69,3 @@
 	</status>	
 	-->
 	
-</husband>
-</main>
