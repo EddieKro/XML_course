@@ -80,8 +80,7 @@
     <xs:complexType name="candidate_type">
         <xs:attribute ref="probability" use="optional"/>
     </xs:complexType>
-
-
+	
     <xs:complexType name="husband">
         <xs:sequence>
             <xs:element name="status" type="status_type"/>
