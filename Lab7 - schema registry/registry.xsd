@@ -1,94 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-<xsd:complexType name="husband">
-	<xsd:sequence>
-		<xsd:element name="status" type="status_type" minOccurs="1" />
-		<xsd:element name="fullname" type="xs:string" minOccurs="1"/>
-		<xsd:element name="address" type="xs:string" />
-		<xsd:element name="email" type="email_type"/>
-		<xsd:element name="color" type="color_type"/>
-		<xsd:element name="height" type="height_type" minOccurs="1"/>
-	</xsd:sequence>
-	
-</xsd:complexType>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- simple types -->
+<xs:simpleType name="PersonEyeColorType">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="Black"/>
+        <xs:enumeration value="Hazel"/>
+        <xs:enumeration value="Gray"/>
+        <xs:enumeration value="Brown"/>
+        <xs:enumeration value="Blue"/>
+        <xs:enumeration value="Violet"/>
+        <xs:enumeration value="Green"/>
+        <xs:enumeration value="Dichromatic"/>
+        <xs:enumeration value="Unknown"/>
+    </xs:restriction>
+</xs:simpleType>
 
-<xsd:complexType name="status_type">
-	<xsd:choice>
+<xs:simpleType name="PersonHairColorType">
+	<xs:restriction base="xs:string">
+        <xs:enumeration value="Maroon"/>
+        <xs:enumeration value="Pink"/>
+		<xs:enumeration value="Ginger"/>
+		<xs:enumeration value="Blond"/>
+		<xs:enumeration value="Grey"/>
+		<xs:enumeration value="White"/>
+      </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="email_type">
+	<xs:restriction base="xs:positiveInteger">
+		<xs:pattern value=".+@.+\..+"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="height_type">
+	<xs:restriction base="xs:positiveInteger">
+		<xs:minInclusive value="55"/>
+		<xs:maxInclusive value="280"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="color_type">
+	<xs:union memberTypes="PersonEyeColorType PersonHairColorType"/>
+</xs:simpleType>
+
+<!-- attributes -->
+<xs:attribute name="marriage_date" type="xs:date"/>
+<xs:attribute name="divorce_date" type="xs:date"/>
+<xs:attribute name="divorce_reason" type="xs:string"/>
+<xs:attribute name="probability">
+		<xs:simpleType>
+			<xs:restriction base="xs:positiveInteger">
+				<xs:minInclusive value="1"/>
+				<xs:maxInclusive value="100"/>				
+			</xs:restriction>
+		</xs:simpleType>
+</xs:attribute>
+<!-- complex types -->
+<xs:complexType name="status_type">
+	<xs:choice>
 		<xs:element name="ex" type="ex_type"/>
 		<xs:element name="present" type="present_type"/>
 		<xs:element name="candidate" type="candidate_type"/>
-	</xsd:choice>
-</xsd:complexType>
-
-<xsd:simpleType name="email_type">
-	<xsd:restriction base="xsd:positiveInteger">
-		<xsd:pattern value=".+@.+\..+"/>
-	</xsd:restriction>
-</xsd:simpleType>
-
-<xsd:simpleType name="color_type">
-	<xsd:union memberTypes="PersonEyeColorType PersonHairColorType"/>
-</xsd:simpleType>
-
-<xsd:simpleType name="ex_type">
-	<xsd:attribute name="marriage_date" type="xsd:date" use="required"/>
-	<xsd:attribute name="divorce_date" type="xsd:date" use="required"/>
-	<xsd:attribute name="divorce_reason" type="xsd:string" use="optional"/>
-</xsd:simpleType>
+	</xs:choice>
+</xs:complexType>
 
 
-<xsd:simpleType name="present_type">
-	<xsd:attribute name="marriage_date" type="xsd:date" use="required"/>
-</xsd:simpleType>
+<xs:complexType name="ex_type">
+	<xs:attribute ref="marriage_date" use="required"/>
+	<xs:attribute ref="divorce_date" use ="required"/>
+	<xs:attribute ref="divorce_reason" use="optional"/>
+</xs:complexType>
 
-<xsd:simpleType name="candidate_type">
-	<xsd:attribute name="probability" use="optional">
-		<simpleType>
-			<xsd:restriction base="xsd:positiveInteger">
-				<xsd:minInclusive value="0">
-				<xsd:maxInclusive value="100">				
-			</xsd:restriction>
-		</simpleType>
-	</xsd:attribute>
-</xsd:simpleType>
+<xs:complexType name="present_type">
+	<xs:attribute ref="marriage_date" use="required"/>
+</xs:complexType>
 
-<xsd:simpleType name="height_type">
-	<xsd:restriction base="xsd:positiveInteger">
-		<xsd:minInclusive value="55">
-		<xsd:maxInclusive value="280">
-	</xsd:restriction>
-</xsd:simpleType>
+<xs:complexType name="candidate_type">
+	<xs:attribute ref="probability" use="optional"/>
+</xs:complexType>
 
-<xsd:simpleType name="PersonEyeColorType">
-    <xsd:restriction base="xsd:string">
-        <xsd:enumeration value="Black"/>
-        <xsd:enumeration value="Hazel"/>
-        <xsd:enumeration value="Gray"/>
-        <xsd:enumeration value="Brown"/>
-        <xsd:enumeration value="Blue"/>
-        <xsd:enumeration value="Violet"/>
-        <xsd:enumeration value="Green"/>
-        <xsd:enumeration value="Dichromatic"/>
-        <xsd:enumeration value="Unknown"/>
-    </xsd:restriction>
-</xsd:simpleType>
 
-<xsd:simpleType name="PersonHairColorType">
-	<xsd:restriction base="xsd:string">
-        <xsd:enumeration value="Maroon"/>
-        <xsd:enumeration value="Pink"/>
-		<xsd:enumeration value="Ginger"/>
-		<xsd:enumeration value="Blond"/>
-		<xsd:enumeration value="Grey"/>
-		<xsd:enumeration value="White"/>
-<xsd:simpleType>
+<xs:complexType name="husband">
+	<xs:sequence>
+		<xs:element name="status" type="status_type" minOccurs="1" />
+		<xs:element name="fullname" type="xs:string" minOccurs="1"/>
+		<xs:element name="address" type="xs:string" />
+		<xs:element name="email" type="email_type"/>
+		<xs:element name="haircolor" type="color_type"/>
+		<xs:element name="eyecolor" type="color_type"/>
+		<xs:element name="height" type="height_type" minOccurs="1"/>
+	</xs:sequence>
+</xs:complexType>
 
-<xsd:element name="main">
-	<xsd:complexType>
-		<xsd:sequence>
-			<xsd:element name="husband" maxOccurs="200"/>
-		</xsd:sequence>
-	</xsd:complexType>
-</xsd:element>
+<xs:element name="main">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="husband" maxOccurs="200"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
 
-</xsd:schema>
+
+</xs:schema>

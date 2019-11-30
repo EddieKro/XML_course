@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<main xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="registry.xsd">
+<husband>
+	<status><ex marriage_date="YYYY.MM.DD" divorce_date="" divorce_reason="didn't like XML"/></status><!--ex,current,future -->
+	<fullname>Mr</fullname>
+	<address>X</address>
+	<email>a@b.c</email>
+	<haircolor>green</haircolor>
+	<eyecolor>blue</eyecolor>
+	<height>129</height>
+	
+	<!--
+	for status:
+	<status>
+	<ex marriage_date="" divorce_date="" divorce_reason="he hated XML"/>
+	</status>
+	
+	OR
+	<status>
+	<candidate probability="55"/>
+	</status>	
+	-->
+	
+</husband>
+</main>

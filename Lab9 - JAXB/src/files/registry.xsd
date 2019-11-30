@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:complexType name="husband">
+	<xs:sequence>
+		<xs:element name="status" type="status_type" minOccurs="1" />
+		<xs:element name="fullname" type="xs:string" minOccurs="1"/>
+		<xs:element name="address" type="xs:string" />
+		<xs:element name="email" type="email_type"/>
+		<xs:element name="color" type="color_type"/>
+		<xs:element name="height" type="height_type" minOccurs="1"/>
+	</xs:sequence>
+
+</xs:complexType>
+
+<xs:complexType name="status_type">
+	<xs:choice>
+		<xs:element name="ex" type="ex_type"/>
+		<xs:element name="present" type="present_type"/>
+		<xs:element name="candidate" type="candidate_type"/>
+	</xs:choice>
+</xs:complexType>
+
+<xs:simpleType name="email_type">
+	<xs:restriction base="xs:positiveInteger">
+		<xs:pattern value=".+@.+\..+"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="color_type">
+	<xs:union memberTypes="PersonEyeColorType PersonHairColorType"/>
+</xs:simpleType>
+
+<xs:simpleType name="ex_type">
+	<xs:attribute name="marriage_date" type="xs:date" use="required"/>
+	<xs:attribute name="divorce_date" type="xs:date" use="required"/>
+	<xs:attribute name="divorce_reason" type="xs:string" use="optional"/>
+</xs:simpleType>
+
+
+<xs:simpleType name="present_type">
+	<xs:attribute name="marriage_date" type="xs:date" use="required"/>
+</xs:simpleType>
+
+<xs:simpleType name="candidate_type">
+	<xs:attribute name="probability" use="optional">
+		<simpleType>
+			<xs:restriction base="xs:positiveInteger">
+				<xs:minInclusive value="0">
+				<xs:maxInclusive value="100">
+			</xs:restriction>
+		</simpleType>
+	</xs:attribute>
+</xs:simpleType>
+
+<xs:simpleType name="height_type">
+	<xs:restriction base="xs:positiveInteger">
+		<xs:minInclusive value="55">
+		<xs:maxInclusive value="280">
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="PersonEyeColorType">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="Black"/>
+        <xs:enumeration value="Hazel"/>
+        <xs:enumeration value="Gray"/>
+        <xs:enumeration value="Brown"/>
+        <xs:enumeration value="Blue"/>
+        <xs:enumeration value="Violet"/>
+        <xs:enumeration value="Green"/>
+        <xs:enumeration value="Dichromatic"/>
+        <xs:enumeration value="Unknown"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="PersonHairColorType">
+	<xs:restriction base="xs:string">
+        <xs:enumeration value="Maroon"/>
+        <xs:enumeration value="Pink"/>
+		<xs:enumeration value="Ginger"/>
+		<xs:enumeration value="Blond"/>
+		<xs:enumeration value="Grey"/>
+		<xs:enumeration value="White"/>
+</xs:simpleType>
+
+<xs:element name="main">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="husband" maxOccurs="200"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+</xs:schema>
