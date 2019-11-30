@@ -4,23 +4,24 @@ package mypackage;
 import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Java class for status_type complex type.
+ * <p>Java class for ex_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="status_type">
+ * &lt;complexType name="ex_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice>
- *         &lt;element name="ex" type="{}ex_type"/>
- *         &lt;element name="present" type="{}present_type"/>
- *         &lt;element name="candidate" type="{}candidate_type"/>
- *       &lt;/choice>
+ *       &lt;attribute ref="{}marriage_date use="required""/>
+ *       &lt;attribute ref="{}divorce_date use="required""/>
+ *       &lt;attribute ref="{}divorce_reason"/>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -29,97 +30,98 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "status_type", propOrder = {
-    "ex",
-    "present",
-    "candidate"
-})
+@XmlType(name = "ex_type")
 @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2019-11-30T11:08:12+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
-public class StatusType {
+public class ExType {
 
+    @XmlAttribute(name = "marriage_date", required = true)
+    @XmlSchemaType(name = "date")
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2019-11-30T11:08:12+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
-    protected ExType ex;
+    protected XMLGregorianCalendar marriageDate;
+    @XmlAttribute(name = "divorce_date", required = true)
+    @XmlSchemaType(name = "date")
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2019-11-30T11:08:12+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
-    protected PresentType present;
+    protected XMLGregorianCalendar divorceDate;
+    @XmlAttribute(name = "divorce_reason")
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2019-11-30T11:08:12+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
-    protected CandidateType candidate;
+    protected String divorceReason;
 
     /**
-     * Gets the value of the ex property.
+     * Gets the value of the marriageDate property.
      * 
      * @return
      *     possible object is
-     *     {@link ExType }
+     *     {@link XMLGregorianCalendar }
      *     
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2019-11-30T11:08:12+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
-    public ExType getEx() {
-        return ex;
+    public XMLGregorianCalendar getMarriageDate() {
+        return marriageDate;
     }
 
     /**
-     * Sets the value of the ex property.
+     * Sets the value of the marriageDate property.
      * 
      * @param value
      *     allowed object is
-     *     {@link ExType }
+     *     {@link XMLGregorianCalendar }
      *     
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2019-11-30T11:08:12+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
-    public void setEx(ExType value) {
-        this.ex = value;
+    public void setMarriageDate(XMLGregorianCalendar value) {
+        this.marriageDate = value;
     }
 
     /**
-     * Gets the value of the present property.
+     * Gets the value of the divorceDate property.
      * 
      * @return
      *     possible object is
-     *     {@link PresentType }
+     *     {@link XMLGregorianCalendar }
      *     
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2019-11-30T11:08:12+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
-    public PresentType getPresent() {
-        return present;
+    public XMLGregorianCalendar getDivorceDate() {
+        return divorceDate;
     }
 
     /**
-     * Sets the value of the present property.
+     * Sets the value of the divorceDate property.
      * 
      * @param value
      *     allowed object is
-     *     {@link PresentType }
+     *     {@link XMLGregorianCalendar }
      *     
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2019-11-30T11:08:12+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
-    public void setPresent(PresentType value) {
-        this.present = value;
+    public void setDivorceDate(XMLGregorianCalendar value) {
+        this.divorceDate = value;
     }
 
     /**
-     * Gets the value of the candidate property.
+     * Gets the value of the divorceReason property.
      * 
      * @return
      *     possible object is
-     *     {@link CandidateType }
+     *     {@link String }
      *     
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2019-11-30T11:08:12+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
-    public CandidateType getCandidate() {
-        return candidate;
+    public String getDivorceReason() {
+        return divorceReason;
     }
 
     /**
-     * Sets the value of the candidate property.
+     * Sets the value of the divorceReason property.
      * 
      * @param value
      *     allowed object is
-     *     {@link CandidateType }
+     *     {@link String }
      *     
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2019-11-30T11:08:12+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
-    public void setCandidate(CandidateType value) {
-        this.candidate = value;
+    public void setDivorceReason(String value) {
+        this.divorceReason = value;
     }
 
 }
